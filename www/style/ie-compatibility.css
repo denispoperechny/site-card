@@ -1,0 +1,7 @@
+
+#main_container {
+position: absolute;
+left: 50%;
+width: 800px;
+margin-left: -400px;
+}
