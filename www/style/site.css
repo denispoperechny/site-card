@@ -4,6 +4,13 @@ body {
 	font-family:"Arial", Helvetica, sans-serif;
 }
 
+#main_container {
+	position: absolute;
+	left: 50%;
+	width: 800px;
+	margin-left: -400px;
+}
+
 a {
 	color: grey;
 	font-style:italic;
@@ -18,4 +25,8 @@ a img {
 .note {
 	color: grey;
 	font-style:italic;
+}
+
+.centered-header {
+	text-align: center;
 }
