@@ -11,7 +11,7 @@ a {
 
 a img {
 	margin-right: 8px;
-	border-width: 0px;
+	border-width: 0;
 	vertical-align: middle;
 }
 
@@ -24,28 +24,61 @@ a img {
 	text-align: center;
 }
 
+.menu-item {
+    float: left;
+    width: 225px;
+    margin: 10px 0 5px 10px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #505050;
+}
+
+.menu-item:first-child {
+    margin-left: 0 !important;
+}
+
+.menu-item:hover {
+    background-color: #606060;
+}
+
+.menu-item a {
+    color: white;
+    text-transform: uppercase;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.subPage {
+    display: none;
+}
+
 @media only screen and (min-width : 800px) {
 	#main_container {
-	position: absolute;
-	left: 50%;
-	width: 800px;
-	margin-left: -400px;
+        position: absolute;
+        left: 50%;
+        width: 800px;
+        margin-left: -400px;
 	}
+
+    .menu-item {
+        width: 385px;
+    }
 }
 
 @media only screen and (min-width : 480px) and (max-width : 799px) {
 	#main_container {
-	position: absolute;
-	left: 50%;
-	width: 480px;
-	margin-left: -240px;
+        position: absolute;
+        left: 50%;
+        width: 480px;
+        margin-left: -240px;
 	}
 }
 
 @media only screen and (max-width : 479px) {
 	#main_container {
-	position: absolute;
-	left: 0%;
-	width: 480px;
+        position: absolute;
+        left: 0;
+        width: 480px;
 	}
 }

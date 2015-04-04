@@ -11,6 +11,8 @@
 	<!--[if lte IE 8]>
 	    <link rel="stylesheet" href="style/ie-compatibility.css">
 	<![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -27,19 +29,66 @@
 			</div>
 		</div>
 
-		<hr />
-		<h1 class="centered-header">Software Engineering</h1>
-		<hr />
+        <div>
+            <div class="menu-item"><a href="#home">Home</a></div>
+            <div class="menu-item"><a href="#projects">Projects</a></div>
+            <div style="clear: both; height: 0px;"></div>
+            <script>
+                $('.menu-item').click(function(){
+                    $(this).find('a')[0].click();
+                });
 
-		<ul class="note">
-			<li>Quality</li>
-			<li>Service</li>
-			<li>Maintenance</li>
-		</ul>
+                $('.menu-item a').click(function(event){
+                    event.stopPropagation();
+                    setTimeout(function() {
+                        updateView();
+                    }, 100);
+                });
+            </script>
+        </div>
+
+        <div class="subPage" data-subpage-id="home">
+            <hr />
+            <h1 class="centered-header">Software Engineering</h1>
+            <hr />
+
+            <ul class="note">
+                <li>Quality</li>
+                <li>Service</li>
+                <li>Maintenance</li>
+            </ul>
+        </div>
+
+        <div class="subPage" data-subpage-id="projects">
+            <h3>Finished projects</h3>
+
+            <div class="projectPresenter">
+                # <span>AltaGranit site card</span><br />
+                <a href="http://altagranit.com.ua" target="_blank">http://altagranit.com.ua</a>
+                <hr />
+            </div>
+        </div>
 
 	</div>
 
 	<script src="script/log.js"></script>
+
+    <script>
+        function updateView(){
+            var url = window.location.href;
+            var anchor = "home";
+            if (url.indexOf("#") != -1){
+                var anchor = url.substring(url.indexOf("#")+1);
+            }
+
+            $(".subPage").hide();
+            $(".subPage[data-subpage-id=" + anchor + "]").show();
+        }
+
+        $(document).ready(function(){
+            updateView();
+        });
+    </script>
 </body>
 
 </html>
